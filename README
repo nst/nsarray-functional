@@ -1,0 +1,25 @@
+This is a category to add Python like map, filter and reduce methods to Cocoa NSArray:
+
+    @interface NSArray (Functional)
+    
+    - (NSArray *)filterUsingSelector:(SEL)aSelector, ...;
+    - (NSArray *)mapUsingSelector:(SEL)aSelector, ...;
+    - (id)reduceUsingSelector:(SEL)aSelector;
+    
+    @end
+
+You can then program in functional style:
+
+    NSArray *a = [NSArray arrayWithObjects:@"a", @"ab", @"abc", @"bc", @"c", nil];
+    
+    NSArray *x = [a filterUsingSelector:@selector(hasPrefix:), @"a", nil];
+    NSArray *y = [a mapUsingSelector:@selector(uppercaseString), nil];
+    NSArray *z = [a reduceUsingSelector:@selector(stringByAppendingString:)];
+
+Results:
+
+    x: (a, ab, abc)
+    y: (A, AB, ABC, BC, C)
+    z: aababcbcc
+
+Read the blog post talking about it: [Map, filter and reduce in Objective-C/Cocoa](http://seriot.ch/blog.php?article=20090109).
