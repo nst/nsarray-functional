@@ -1,3 +1,6 @@
+Map, filter and reduce in Objective-C/Cocoa
+-------------------------------------------
+
 This is a category to add Python like map, filter and reduce methods to Cocoa NSArray:
 
     @interface NSArray (Functional)
@@ -22,4 +25,4 @@ Results:
     y: (A, AB, ABC, BC, C)
     z: aababcbcc
 
-Read the blog post talking about it: [Map, filter and reduce in Objective-C/Cocoa](http://seriot.ch/blog.php?article=20090109).
+Read the blog post talking about it: http://seriot.ch/blog.php?article=20090109.
